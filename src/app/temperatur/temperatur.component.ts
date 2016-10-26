@@ -7,7 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TemperaturComponent implements OnInit {
 
-  constructor() { }
+  public waterTemp: string;
+  public airTemp: string;
+  public title: string;
+
+  constructor() {
+    this.waterTemp = "20";
+    this.airTemp = "14";
+    this.title = "Et harum quidem";
+  }
 
   ngOnInit() {
   }
