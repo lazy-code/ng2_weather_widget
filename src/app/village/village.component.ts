@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 type Item = {first:string, second:string, third:string, fourth:string};
 type ImagesPath = {main:string, secondary1:string, secondary2:string};
@@ -9,12 +9,22 @@ type ImagesPath = {main:string, secondary1:string, secondary2:string};
   styleUrls: ['./village.component.css']
 })
 
-export class VillageComponent implements OnInit {
+export class VillageComponent {
+
+  @Input() menu;
+
+  // Class work 20.10
+  // @Output() villageClick = new EventEmitter();
+  //
+  // next(data) {
+  //   console.log("===", "village controller", data);
+  //   this.villageClick.emit(data);
+  // }
+  // end Class work 20.10
 
   public imagesPath: ImagesPath;
   public items: Item[];
   public title: string;
-  public menu: string[];
 
   constructor() {
       //Image paths
@@ -48,9 +58,6 @@ export class VillageComponent implements OnInit {
 
       // Title
       this.title = "Righteous indignation & like";
-
-      // Menu
-      this.menu = ["Hotel", "Fishing", "Tours", "Weather"];
   }
 
   ngOnInit() {

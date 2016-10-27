@@ -7,6 +7,9 @@ import { AppComponent } from './app.component';
 import { VillageComponent } from './village/village.component';
 import { TeddyBearComponent } from './teddy-bear/teddy-bear.component';
 import { TemperaturComponent } from './temperatur/temperatur.component';
+import { ItemComponent } from './village/item/item.component';
+import { MylogDirective } from './mylog.directive';
+import { MypipePipe } from './mypipe.pipe';
 
 @NgModule({
   declarations: [
@@ -14,6 +17,9 @@ import { TemperaturComponent } from './temperatur/temperatur.component';
     VillageComponent,
     TeddyBearComponent,
     TemperaturComponent,
+    ItemComponent,
+    MylogDirective,
+    MypipePipe,
   ],
   imports: [
     BrowserModule,
