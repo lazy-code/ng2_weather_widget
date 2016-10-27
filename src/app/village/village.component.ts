@@ -12,6 +12,7 @@ type ImagesPath = {main:string, secondary1:string, secondary2:string};
 export class VillageComponent {
 
   @Input() menu;
+  @Output() activityClick = new EventEmitter();
 
   // Class work 20.10
   // @Output() villageClick = new EventEmitter();
@@ -25,6 +26,7 @@ export class VillageComponent {
   public imagesPath: ImagesPath;
   public items: Item[];
   public title: string;
+  public selectedItem: string;
 
   constructor() {
       //Image paths
@@ -37,19 +39,25 @@ export class VillageComponent {
       // Items
       this.items = [
         {
-          first: "Resort Address",
+          first: "Hotel",
           second: "Sed ut perspiciatis",
           third: "Et harum quidem",
           fourth: "Tel:+1285 968 685"
         },
         {
-          first: "Resort Address",
+          first: "Fishing",
           second: "Sed ut perspiciatis",
           third: "Et harum quidem",
           fourth: "Tel:+1285 968 685"
         },
         {
-          first: "Resort Address",
+          first: "Tours",
+          second: "Sed ut perspiciatis",
+          third: "Et harum quidem",
+          fourth: "Tel:+1285 968 685"
+        },
+        {
+          first: "Weather",
           second: "Sed ut perspiciatis",
           third: "Et harum quidem",
           fourth: "Tel:+1285 968 685"
@@ -58,6 +66,15 @@ export class VillageComponent {
 
       // Title
       this.title = "Righteous indignation & like";
+  }
+
+  getElement(elem) {
+    this.activityClick.emit(elem);
+  }
+
+  itemClick(event) {
+    event.preventDefault();
+    this.selectedItem = event.target.innerText;
   }
 
   ngOnInit() {

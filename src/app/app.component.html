@@ -4,14 +4,15 @@
   <div class="element-left">
     <app-village
       [menu] = "menu"
+      (activityClick)="setElemActivity($event)"
     >
       loading...
     </app-village>
   </div>
 
   <div class="element-right">
-    <app-temperatur>loading...</app-temperatur>
-    <app-teddy-bear>loading...</app-teddy-bear>
+    <app-temperatur [weather]="weather">loading...</app-temperatur>
+    <app-teddy-bear [follow]="follow">loading...</app-teddy-bear>
   </div>
   <div class="clear"> </div>
 </div>
@@ -37,7 +38,7 @@
 <!--<div [ngClass]="{'active': true}">text with "active" class</div>-->
 <!--<div [ngStyle]="{'color': 'gre' + 'en'}">green text</div>-->
 
-<!--&lt;!&ndash;Pipes&ndash;&gt;-->
+<!--Pipes-->
 <!--<div [ngStyle]="{color: 'white'}">-->
   <!--{{number|currency}}-->
 <!--</div>-->
@@ -46,7 +47,7 @@
   <!--{{number|mypipe: '3'}}-->
 <!--</div>-->
 
-<!--&lt;!&ndash;directives&ndash;&gt;-->
+<!--directives-->
 <!--<div appMylog></div>-->
 <!--<input appMylog/>-->
 <!--end Class work 20.10-->

@@ -10,6 +10,7 @@ import { TemperaturComponent } from './temperatur/temperatur.component';
 import { ItemComponent } from './village/item/item.component';
 import { MylogDirective } from './mylog.directive';
 import { MypipePipe } from './mypipe.pipe';
+import { ItemsFilterPipe } from './village/items-filter.pipe';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { MypipePipe } from './mypipe.pipe';
     ItemComponent,
     MylogDirective,
     MypipePipe,
+    ItemsFilterPipe,
   ],
   imports: [
     BrowserModule,

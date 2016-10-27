@@ -3,7 +3,7 @@
   <div class="ele-strip">
     <ul>
       <li *ngFor="let menuItem of menu; let last = last" [ngClass]="{'anc-bor': last}">
-        <a href="#">{{menuItem}}</a>
+        <a href="#" (click)="itemClick($event)">{{menuItem}}</a>
       </li>
     </ul>
   </div>
@@ -12,8 +12,8 @@
     <span class="line"> </span>
     <div class="activity_box">
       <div class="scrollbar" id="style-2">
-        <div *ngFor="let item of items;" class="activity-row">
-          <div class="activity-desc">
+        <div *ngFor="let item of (items|itemsFilter:selectedItem);" class="activity-row">
+          <div class="activity-desc" (click)="getElement(item.first)">
             <h5>{{item.first}}</h5>
             <p>{{item.second}}</p>
             <p>{{item.third}}</p>
